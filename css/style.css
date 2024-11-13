@@ -217,6 +217,27 @@ input:focus ,.accordion-button:focus{
         width: 110% !important;
     }
 } 
+@media (max-width:368px){
+    .navbar img{
+        margin-left: 10px !important;
+    }
+    .icon-fixed{
+        margin-top: 28%;
+        margin-left: 80%;
+    }
+    .space-card h4{
+        font-size: 14px;
+    }
+    .card-body a{
+        margin-left: 50% !important;
+    }
+    .news-image1,.news-image2{
+        width: 112.5% !important;
+    }
+    .news-buttons button{
+        font-size: 12px !important;
+    }
+} 
 /* join section ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .icon-img{
     width: 300px;
