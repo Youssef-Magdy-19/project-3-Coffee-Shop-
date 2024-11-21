@@ -1,12 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>marketing</title>
-    <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>marketing</title>
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css"> 
+  <style>
+      *{
+      margin: 0;
+      box-sizing: border-box;
+      }
+      .nav-item a:hover{
+        color: rgb(231, 202, 160) !important;
+      }
+      .dropdown-menu a:hover{
+        background-color: gray !important;
+        color: white !important;
+      }
+      .icon-fixed{
+        margin-top: 15%;
+        margin-left: 93%;
+        z-index: 1000;
+      }
+      .icon-fixed i{
+        font-size:60px;
+        color: rgb(221, 180, 122);
+        margin-bottom: 20px;
+        cursor: pointer;  
+      }
+      .icon-fixed i:hover{
+        color: rgba(231, 202, 160, .8);
+      }
+      input:focus ,.accordion-button:focus{
+        border: 1px solid rgb(231, 202, 160) !important;
+        box-shadow: 0px 0px 0px 0px !important;
+      }
+      .btn{
+        background-color: rgb(231, 202, 160) !important;
+      }
+      .btn:hover{
+        background-color: rgba(231, 202, 160, .8) !important;
+      } 
+      .part{
+        height: 50vh;
+        width: 100%;
+      }
+      .images{
+        background-image: url(../images/141414.webp);
+        background-attachment: fixed;
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+      }
+      .after{
+        position: relative;
+        box-shadow: 0px 0px 15px 1px  gray;
+      }
+      .after:after{
+        position: absolute;
+        content: "";
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+      }
+      .after:hover:after{
+        height: 100%;
+        width: 100%;
+        z-index: 5;
+        background-color: rgba(255, 254, 254, .4);
+        transition: .8s;
+      }
+      .after:before{
+        position: absolute;
+        content: "";
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+      }
+      .after:hover:before{
+        height: 100%;
+        width: 100%;
+        z-index: 5;
+        background-color: rgba(255, 255, 255, 0.4);
+        transition: .8s;
+      }
+
+      .bg-img{
+        background-image: url(../images/12112121.jpeg);
+        height: 50vh;
+      }
+/* team section //////////////////////////////////////////////////////////////////////////////////////// */
+      .person{
+        position: relative;
+        width: 32%;
+        height: 420px;
+        transition: .5s;
+      }
+      .person:hover{
+        transform: scale(.9,.9);
+      }
+     .team-header{
+        background:-webkit-linear-gradient(360deg, #787878 0%, #c4c2c0 80%);
+        background:-o-linear-gradient(360deg, #787878 0%, #c4c2c0 80%);
+        background:-moz-linear-gradient(360deg, #787878 0%, #c4c2c0 80%);
+        background:linear-gradient(360deg, #787878 0%, #c4c2c0 80%);
+      }
+      .person:hover .overlay{
+        background-color: rgba(231, 202, 160, 0.7);
+      }
+      .overlay{
+        position: absolute;
+        z-index: 5;
+        background-color: rgba(0, 0, 0, 0.75);
+        width: 100%;
+        height: 100%;
+        margin-left: -11px;
+      }
+      .overlay img{
+        margin-top: 120px;
+        margin-left: 20px;
+      }
+/* news section //////////////////////////////////////////////////////////////////////////////////////////////////////// */
+      .news-image1 , .news-image2{
+        overflow: hidden;
+        margin-top: -40px;
+        margin-bottom: -40px;
+        width: 27.5%;
+      }
+     .news-img1,.news-img2{
+        clip-path: polygon(3% 0, 100% 0, 100% 100%, 17% 100%);
+        width: 100%;
+        height: 100%;
+        transition: .5s;
+      }
+      .news-image2{
+        margin-left:-40px;
+      }
+      .news-img2{
+        clip-path: polygon(0 0, 97% 0, 83% 100%, 0% 100%);
+      }
+      .card-body:hover .news-img1 , .card-body:hover .news-img2{
+        transform: scale(1.05);
+      }
+      .play:hover{
+        color: gray !important;
+      }
+      .news-line{
+        position: absolute;
+        margin-top: -10px;
+      }
+      .card-body:hover .news-line{
+        padding-left: 140px;
+      }
+      .card-title{
+        font-size: 22px !important;
+      }
+      /* join section ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+      .icon-img{
+        width: 300px;
+        transition: .2s;
+        box-shadow: 0px 0px 20px 1px  gray;
+      }
+      .join-icon img{
+        background-color: white;
+      }
+      footer,.foot{
+        background-color: gray;
+      }
+      .company-body-p{
+        cursor: pointer;
+      }
+      .company-body-p:hover{
+        color:rgb(231, 202, 160);
+      }
+     @media(max-width:1399px){
+       .card-body a{
+          margin-left: 67.5% !important;
+        }
+      } 
+      @media(max-width:1199px){
+        .card-body a{
+          margin-left: 62% !important;
+        }
+      }
+      @media (max-width:991px){
+        form{
+          flex-direction: column;
+          display: inline;
+        }
+        form button{
+          margin: 10px 0px;
+          width: 80px;
+          display: inline;
+        }
+        .card-body a{
+          margin-left: 66% !important;
+        }
+        .icon-fixed{
+          margin-top: 20%;
+          margin-left: 90%;
+        }
+        .news-img1,.news-img2{
+          height: 230px;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          margin-bottom:15px;
+        }
+        .news-image1,.news-image2{
+          width: 106% !important;
+        }
+    }
+    @media (max-width:768px){
+      .icon-fixed{
+          margin-top: 20%;
+          margin-left: 88%;
+      }
+      .card-body a{
+          margin-left: 68% !important;
+      }
+      .news-image1,.news-image2{
+          width: 108.5% !important;
+      }
+    }
+    @media (max-width:567px){
+      .icon-fixed{
+          margin-top: 30%;
+          margin-left: 84%;
+      }
+      .login{
+        margin-right: 70% !important;
+      }
+      .card-body a{
+          margin-left: 70% !important;
+      }
+      .news-image1,.news-image2{
+          width: 110% !important;
+      }
+    } 
+    @media (max-width:488px){
+      .login{
+        margin-right: 57% !important;
+      }
+    }
+    @media (max-width:368px){
+      .navbar img{
+          margin-left: 10px !important;
+      }
+      .icon-fixed{
+          margin-top: 28%;
+          margin-left: 80%;
+      }
+      .login{
+        margin-right: 55% !important;
+      }
+      .card-body a{
+          margin-left: 60% !important;
+      }
+      .news-image1,.news-image2{
+          width: 112.5% !important;
+      }
+      .news-buttons button{
+          font-size: 12px !important;
+      }
+    } 
+
+</style>   
 </head>
 <body class="bg-dark position-relative">
  <header>
@@ -74,7 +339,7 @@
             </form>
           </div> <!-- /modal-body -->
           <div class="modal-footer bg-dark">
-            <button type="button" class="btn btn-primary" style="margin-right: 335px;background-color: rgb(231, 202, 160);border: 0px">Login</button>
+            <button type="button" class="btn btn-primary login" style="margin-right: 71%;background-color: rgb(231, 202, 160);border: 0px">Login</button>
             <button type="button" class="btn btn-primary" style="background-color: rgb(231, 202, 160);border: 0px" data-bs-dismiss="modal">close</button>
           </div> <!-- /modal-footer -->
         </div> <!-- /modal-contant -->
